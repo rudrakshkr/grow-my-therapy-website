@@ -538,6 +538,68 @@ function SpecialtiesSection() {
 }
 
 
+function AppointmentSection() {
+  return (
+    <section
+      className="appointment-section"
+      id="schedule-appointment"
+      aria-labelledby="appointment-heading"
+    >
+      <div className="appointment-left-image">
+        <Image
+          src="/images/appointment-shells.jpg"
+          alt="A person picking up seashells on a sandy beach"
+          fill
+          sizes="12vw"
+          className="appointment-photo"
+        />
+      </div>
+
+      <div className="appointment-content">
+        <p className="appointment-eyebrow">
+          Schedule an appointment
+        </p>
+
+        <h2 id="appointment-heading">
+          Find a therapist who is the right fit for{" "}
+          <span className="appointment-script">you</span>.
+        </h2>
+
+        <div className="appointment-description">
+          <p>
+            Coming to therapy is a courageous decision, and connecting with
+            the right kind of therapist makes all the difference. We
+            understand that your journey is personal, and we&apos;re here to
+            support you with care and understanding every step of the way.
+            Each member of our team brings dedicated expertise and a
+            commitment to support you in your struggles. We want you to feel
+            prioritized, understood, and empowered.
+          </p>
+
+          <p>
+            Click the button below to schedule an appointment.
+          </p>
+        </div>
+
+        <a href="/contact" className="appointment-button">
+          Book now
+        </a>
+      </div>
+
+      <div className="appointment-right-image">
+        <Image
+          src="/images/appointment-family.jpg"
+          alt="An adult and child exploring seashells on the beach"
+          fill
+          sizes="35vw"
+          className="appointment-photo appointment-family-photo"
+        />
+      </div>
+    </section>
+  );
+}
+
+
 export default function Home() {
   return (
     <main className="reference-home">
@@ -550,6 +612,7 @@ export default function Home() {
       <HowWeWorkSection />
       <HonoringSection />
       <SpecialtiesSection />
+      <AppointmentSection />
     </main>
   );
 }
