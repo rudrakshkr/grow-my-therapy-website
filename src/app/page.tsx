@@ -600,6 +600,108 @@ function AppointmentSection() {
 }
 
 
+function Footer() {
+  const teamMembers = [
+    ["Jennifer Anderson", "/jennifer-anderson"],
+    ["Heather Williams-Baumgart", "/heather-williams-baumgart"],
+    ["Autumn Bodily", "/autumn-bodily"],
+    ["Candace Bletscher", "/candace-bletscher"],
+    ["Samantha Johnson", "/samantha-johnson"],
+    ["Rosa Gomez", "/rosa-gomez"],
+    ["Chad Flores", "/chad-flores"],
+    ["Simran Sidhu", "/simran-sidhu"],
+    ["Jessica Jauregui", "/jessica-jauregui"],
+  ];
+
+  return (
+    <footer className="site-footer">
+      <div className="footer-main">
+        <div className="footer-brand">
+          <a href="/" className="footer-logo-link" aria-label="Conejo Valley home">
+            <Image
+              src="/images/footer-logo.png"
+              alt="Conejo Valley Family Counseling"
+              width={450}
+              height={131}
+              className="footer-logo"
+            />
+          </a>
+
+          <p className="footer-description">
+            We want to make getting started simple. You’re welcome to come
+            into our office in Newbury Park or schedule virtual appointments
+            from anywhere in CA—whatever works best for you.
+          </p>
+        </div>
+
+        <nav className="footer-column" aria-label="Footer navigation">
+          <h2 className="footer-column-heading">Navigate</h2>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/therapists-newbury-park">About</a></li>
+            <li><a href="/faqs">FAQs</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div className="footer-column">
+          <h2 className="footer-column-heading">Our Team</h2>
+          <ul>
+            {teamMembers.map(([name, href]) => (
+              <li key={href}>
+                <a href={href}>{name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="footer-column footer-contact">
+          <h2 className="footer-column-heading">Contact</h2>
+
+          <address>
+            925 Broadbeck Dr
+            <br />
+            Suites 200 and 225
+            <br />
+            Newbury Park, CA 91320
+            <br />
+            <a href="mailto:info@conejovalleycounseling.com">
+              info@conejovalleycounseling.com
+            </a>
+            <br />
+            <a href="tel:8052423120">805.242.3120</a>
+          </address>
+
+          <p className="footer-service-area">
+            Serving Thousand Oaks, Westlake Village, Camarillo, Moorpark,
+            &amp; Simi Valley
+          </p>
+        </div>
+      </div>
+
+      <div className="footer-legal">
+        <p>
+          <a href="/terms">Terms</a>
+          <span aria-hidden="true"> | </span>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <span aria-hidden="true"> | </span>
+          <a href="/disclaimer">Disclaimer</a>
+          <span aria-hidden="true"> | </span>
+          Website by{" "}
+          <a
+            href="https://walkerstrategyco.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Walker Strategy Co.
+          </a>
+        </p>
+      </div>
+    </footer>
+  );
+}
+
+
 export default function Home() {
   return (
     <main className="reference-home">
@@ -613,6 +715,7 @@ export default function Home() {
       <HonoringSection />
       <SpecialtiesSection />
       <AppointmentSection />
+      <Footer />
     </main>
   );
 }
