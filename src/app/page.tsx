@@ -457,6 +457,87 @@ function HowWeWorkSection() {
 }
 
 
+function HonoringSection() {
+  return (
+    <section className="honoring-section">
+      <div className="honoring-image">
+        <Image
+          src="/images/honoring-family.jpg"
+          alt="Family of four standing together in the ocean, holding hands and facing the water."
+          fill
+          sizes="(min-width: 768px) 54vw, 100vw"
+          className="honoring-photo"
+        />
+      </div>
+
+      <div className="honoring-copy">
+        <h2>
+          Honoring where you’ve been{" "}
+          <span className="honoring-ampersand">&amp;</span>{" "}
+          helping shape where you’re headed.
+        </h2>
+      </div>
+    </section>
+  );
+}
+
+
+const specialties = [
+  {
+    title: "Trauma",
+    description:
+      "We don’t always know when and how we’ve experienced trauma. In therapy, we’ll work together to help you process your past, understand what’s causing you to stay “stuck,” and regain a sense of safety, control, and hope. You don’t have to carry your burdens alone.",
+    href: "/trauma-counseling-newbury-park",
+  },
+  {
+    title: "EMDR",
+    description:
+      "Eye Movement Desensitization and Reprocessing (EMDR) is a powerful therapeutic technique that helps process and heal trauma by reworking how painful memories are stored in your brain. This allows you to find relief and move toward lasting healing.",
+    href: "/emdr-therapy-newbury-park",
+  },
+  {
+    title: "Dissociation",
+    description:
+      "The feeling of losing time, hearing conflicting voices, or questioning your sense of self can be overwhelming. In therapy, we’ll help you understand these experiences, recognize your own triggers, and create a sense of balance and identity so that you can feel more grounded.",
+    href: "/dissociative-identity-disorder-therapist-newbury-park",
+  },
+  {
+    title: "Special Needs Parenting",
+    description:
+      "Parenting a child with special needs presents unique challenges and complex emotions. We provide compassionate support through lived experience and expertise to help you navigate this journey with tools, understanding, and self-care.",
+    href: "/counseling-special-needs-parents-newbury-park",
+  },
+];
+
+function SpecialtiesSection() {
+  return (
+    <section className="specialties-section" id="specialties">
+      <div className="specialties-layout">
+        <h2 className="specialties-heading">
+          Our <span>specialties</span>
+          <br />
+          include...
+        </h2>
+
+        <div className="specialties-grid">
+          {specialties.map((specialty) => (
+            <article className="specialty-card" key={specialty.title}>
+              <h3>{specialty.title}</h3>
+
+              <p>{specialty.description}</p>
+
+              <a href={specialty.href} className="specialty-link">
+                Learn more
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 export default function Home() {
   return (
     <main className="reference-home">
@@ -467,6 +548,8 @@ export default function Home() {
       <StatementSection />
       <ExpertiseSection />
       <HowWeWorkSection />
+      <HonoringSection />
+      <SpecialtiesSection />
     </main>
   );
 }
