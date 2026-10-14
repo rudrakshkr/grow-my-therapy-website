@@ -208,11 +208,69 @@ function HeroSection() {
   );
 }
 
+function IntroductionSection() {
+  return (
+    <section className="intro-section" aria-labelledby="intro-heading">
+      <div className="intro-content">
+        
+      <h2 id="intro-heading" className="intro-heading">
+        You're holding onto hope that life can be
+        <br />
+        better than it is right now.
+      </h2>
+
+        <div className="intro-copy-grid">
+          <div className="intro-left-copy">
+            <p className="intro-emphasis">
+              <strong>
+                  At Conejo Valley Family Counseling we want to make that hope
+                  a reality.
+              </strong>
+            </p>
+
+            <p className="intro-paragraph">
+              Whether you&apos;re an adult seeking personal growth, looking to
+              work through your trauma, a couple working on your relationship,
+              or a parent looking for support for your child, we provide a
+              compassionate and safe space to help you navigate all of
+              life&apos;s ups and downs.
+            </p>
+          </div>
+
+          <div className="intro-right-copy">
+            <p className="intro-paragraph">
+              First and foremost, we believe what you&apos;re going through is
+              real, valid, and worthy of support. Our team offers clients in
+              the Newbury Park area and across CA an environment to discover
+              a new life and a deeper sense of self in the midst of their
+              struggles. As we tap into the power of connection and
+              understanding, you can find your footing again and take a
+              transformative path forward.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="intro-image">
+        <Image
+          src="/images/intro-beach.jpg"
+          alt="Sandy beach with gentle ocean waves and a cloudy sky"
+          fill
+          sizes="(min-width: 1100px) 30.5vw, 100vw"
+          className="intro-photo"
+        />
+      </div>
+    </section>
+  );
+}
+
+
 export default function Home() {
   return (
     <main className="reference-home">
       <SiteHeader />
       <HeroSection />
+      <IntroductionSection />
     </main>
   );
 }
