@@ -1,69 +1,218 @@
 import Image from "next/image";
 
+type NavItem = {
+  label: string;
+  children?: { label: string }[];
+};
+
+const navigation: NavItem[] = [
+  { label: "About" },
+  {
+    label: "Our Team",
+    children: [
+      { label: "Jennifer Anderson, LMFT" },
+      { label: "Candace Bletscher, AMFT" },
+      { label: "Heather Williams-Baumgart, AMFT" },
+      { label: "Samantha Johnson, AMFT" },
+      { label: "Autumn Bodily, AMFT" },
+      { label: "Rosa Gomez, AMFT" },
+      { label: "Chad Flores, AMFT" },
+      { label: "Simran Sidhu, AMFT" },
+      { label: "Jessica Jauregui, MA, AMFT" },
+    ],
+  },
+  {
+    label: "Specialties",
+    children: [
+      { label: "Dissociation" },
+      { label: "Trauma" },
+      { label: "Special Needs Parenting" },
+      { label: "Couples" },
+      { label: "Children & Teens" },
+      { label: "Anxiety & Depression" },
+      { label: "Adoption" },
+    ],
+  },
+  {
+    label: "Methods",
+    children: [
+      { label: "EMDR" },
+      { label: "Brainspotting" },
+      { label: "Somatic Therapy" },
+      { label: "Parts Work Therapy" },
+    ],
+  },
+  { label: "FAQs" },
+];
+
+function SiteHeader() {
+  return (
+    <header className="site-header header-announcement-bar-wrapper">
+      <a href="#hero-heading" className="header-skip-link">
+        Skip to Content
+      </a>
+
+      <div className="site-header-inner">
+        <div className="header-title-nav-wrapper">
+          <div className="header-title-logo">
+            <a href="#!" aria-label="Conejo Valley Family Counseling">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/670423e106da6c036366fd10/7116bf54-a0e1-4128-81d8-24fd9960c7ed/Conejo+Valley+Counseling+Logo.png?format=1500w"
+                alt="Conejo Valley Family Counseling"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
+                className="brand-logo-img"
+              />
+            </a>
+          </div>
+
+          <nav className="desktop-nav" aria-label="Main navigation">
+            {navigation.map((item) =>
+              item.children ? (
+                <div
+                  key={item.label}
+                  className="header-nav-item header-nav-item--folder"
+                >
+                  <button
+                    type="button"
+                    className="header-nav-folder-title"
+                    aria-expanded="false"
+                  >
+                    <span className="header-nav-folder-title-text">
+                      {item.label}
+                    </span>
+                  </button>
+                  <div className="header-nav-folder-content">
+                    {item.children.map((subItem) => (
+                      <div
+                        key={subItem.label}
+                        className="header-nav-folder-item"
+                      >
+                        <a href="#!">
+                          <span className="header-nav-folder-item-content">
+                            {subItem.label}
+                          </span>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div
+                  key={item.label}
+                  className="header-nav-item header-nav-item--collection"
+                >
+                  <a href="#!">{item.label}</a>
+                </div>
+              )
+            )}
+          </nav>
+        </div>
+
+        <div className="header-actions header-actions--right">
+          <div className="header-actions-action header-actions-action--cta">
+            <a className="contact-link" href="#!">
+              Contact
+            </a>
+          </div>
+        </div>
+
+        <details className="mobile-nav">
+          <summary className="header-burger-btn" aria-label="Open Menu">
+            <span className="burger-box">
+              <span className="burger-inner">
+                <span className="top-bun" />
+                <span className="patty" />
+                <span className="bottom-bun" />
+              </span>
+            </span>
+          </summary>
+          <nav aria-label="Mobile navigation">
+            {navigation.map((item) => (
+              <div key={item.label} className="mobile-nav-group">
+                <a href="#!" className="mobile-nav-parent">
+                  {item.label}
+                </a>
+                {item.children && (
+                  <div className="mobile-nav-children">
+                    {item.children.map((subItem) => (
+                      <a key={subItem.label} href="#!">
+                        {subItem.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <a href="#!" className="mobile-nav-cta">
+              Contact
+            </a>
+          </nav>
+        </details>
+      </div>
+    </header>
+  );
+}
+
+function HeroSection() {
+  return (
+    <section className="hero" aria-labelledby="hero-heading">
+      <div className="hero-left-image">
+        <Image
+          src="/images/hero-family.jpg"
+          alt="Family spending time together at the beach"
+          fill
+          loading="eager"
+          sizes="(min-width: 1200px) 34vw, 50vw"
+          className="hero-photo"
+        />
+      </div>
+
+      <div className="hero-copy">
+        <p className="hero-eyebrow">
+          ONLINE &amp; IN-PERSON COUNSELING IN NEWBURY PARK &amp;
+          <br />
+          ACROSS CA
+        </p>
+
+        <h1 id="hero-heading" className="hero-heading">
+          Rebuild your foundation on{" "}
+          <br className="desktop-break" />
+          solid ground and finally begin{" "}
+          <br className="desktop-break" />
+          to <span className="hero-script">thrive</span>.
+        </h1>
+
+        <p className="hero-description">
+          Specialized therapy for adults, couples, teens, and children to
+          reflect, heal, and grow.
+        </p>
+
+        <a className="hero-cta" href="#contact">
+          Book an Appointment
+        </a>
+      </div>
+
+      <div className="hero-right-image">
+        <Image
+          src="/images/hero-child.jpg"
+          alt="Parent and child walking along the beach"
+          fill
+          sizes="(min-width: 1200px) 9vw, 50vw"
+          className="hero-photo"
+        />
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="reference-home">
+      <SiteHeader />
+      <HeroSection />
+    </main>
   );
 }
