@@ -322,6 +322,36 @@ function WhoWeHelpSection() {
   );
 }
 
+function StatementSection() {
+  return (
+    <section className="statement-section">
+      <div className="statement-visual">
+        <div className="statement-image">
+          <Image
+            src="/images/story-background.png"
+            alt=""
+            fill
+            sizes="100vw"
+            className="statement-photo"
+          />
+        </div>
+
+        <div className="statement-overlay" />
+
+        <div className="statement-content">
+          <h2>
+            You deserve a place where your story is heard, valued, and
+            understood.{" "}
+            <em>
+              Nothing will be too heavy for us to carry together.
+            </em>
+          </h2>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 export default function Home() {
   return (
@@ -330,6 +360,7 @@ export default function Home() {
       <HeroSection />
       <IntroductionSection />
       <WhoWeHelpSection />
+      <StatementSection />
     </main>
   );
 }
