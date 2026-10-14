@@ -265,12 +265,71 @@ function IntroductionSection() {
 }
 
 
+const whoWeHelpCards = [
+  {
+    title: "Adults",
+    image: "/images/who-adults.jpg",
+    alt: "Two people sitting together by the water with mountains in the background",
+    description:
+      "Feeling stuck or overwhelmed? We help adults find clarity, build resilience, and move forward with confidence by addressing the root causes of anxiety, stress, and emotional pain.",
+  },
+  {
+    title: "Couples",
+    image: "/images/who-couples.jpg",
+    alt: "A couple embracing on the beach",
+    description:
+      "Relationships require effort, and we’re here to help you strengthen yours. We guide couples through challenges like communication breakdowns and trust issues, helping you rebuild intimacy and strengthen your relationship.",
+  },
+  {
+    title: "Children & Teens",
+    image: "/images/who-children.jpg",
+    alt: "Two children playing together on the beach",
+    description:
+      "Kids need support, too. We help them process big emotions, cope with challenging family situations, build coping skills, and feel understood, while also working closely with their parents to create a nurturing environment.",
+  },
+];
+
+function WhoWeHelpSection() {
+  return (
+    <section className="who-help-section" id="who-we-help">
+      <h2 className="who-help-heading">
+        Who we <span>help</span>
+      </h2>
+
+      <div className="who-help-cards">
+        {whoWeHelpCards.map((card) => (
+          <article className="who-help-card" key={card.title}>
+            <div className="who-help-image">
+              <Image
+                src={card.image}
+                alt={card.alt}
+                fill
+                sizes="(min-width: 768px) 25vw, 88vw"
+                className="who-help-photo"
+              />
+            </div>
+
+            <div className="who-help-card-content">
+              <h3 className="who-help-card-title">{card.title}</h3>
+              <p className="who-help-card-description">
+                {card.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+
 export default function Home() {
   return (
     <main className="reference-home">
       <SiteHeader />
       <HeroSection />
       <IntroductionSection />
+      <WhoWeHelpSection />
     </main>
   );
 }

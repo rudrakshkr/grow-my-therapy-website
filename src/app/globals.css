@@ -484,6 +484,151 @@ a {
   }
 }
 
+/* Who We Help Section  */
+
+.who-help-section {
+  width: 100%;
+  padding: 145px 0 85px;
+  overflow: hidden;
+  background: #ffffff;
+  color: #30302f;
+}
+
+.who-help-heading {
+  margin: 0 0 54px 5.5%;
+  font-family: var(--font-beaufort-loaded), Georgia, serif;
+  font-size: clamp(38px, 2.8vw, 48px);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.who-help-heading span {
+  display: inline-block;
+  margin-left: 0.06em;
+  color: var(--accent);
+  font-family: var(--font-script), cursive;
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 0.8;
+  letter-spacing: 0;
+  vertical-align: -0.12em;
+}
+
+.who-help-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1vw;
+  width: 80%;
+  margin-left: 15.7%;
+  padding-top: 1.5rem;
+}
+
+.who-help-card {
+  min-width: 0;
+}
+
+.who-help-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.935 / 1;
+  overflow: hidden;
+  background: #f0eee7;
+}
+
+.who-help-photo {
+  object-fit: cover;
+  object-position: center;
+}
+
+.who-help-card-content {
+  padding-top: 48px;
+}
+
+.who-help-card-title {
+  margin: 0 0 28px;
+  font-family: var(--font-beaufort-loaded), Georgia, serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+}
+
+.who-help-card-description {
+  margin: 0;
+  font-family: var(--font-muli), Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .who-help-section {
+    padding: 64px 6% 70px;
+  }
+
+  .who-help-heading {
+    margin: 0 0 42px;
+  }
+
+  .who-help-cards {
+    width: 100%;
+    margin-left: 0;
+    gap: 18px;
+  }
+
+  .who-help-card-content {
+    padding-top: 28px;
+  }
+
+  .who-help-card-title {
+    margin-bottom: 16px;
+    font-size: 23px;
+  }
+
+  .who-help-card-description {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .who-help-section {
+    padding: 52px 6% 60px;
+  }
+
+  .who-help-heading {
+    margin-bottom: 32px;
+    font-size: 39px;
+  }
+
+  .who-help-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+  }
+
+  .who-help-image {
+    aspect-ratio: 1 / 1;
+  }
+
+  .who-help-card-content {
+    padding-top: 22px;
+  }
+
+  .who-help-card-title {
+    margin-bottom: 12px;
+    font-size: 25px;
+  }
+
+  .who-help-card-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+
 /* Tablet and mobile layout */
 @media (max-width: 1199px) {
   .site-header {
