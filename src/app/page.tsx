@@ -353,6 +353,51 @@ function StatementSection() {
 }
 
 
+const expertiseColumns = [
+  [
+    "Dissociation",
+    "Trauma",
+    "Family Conflict",
+    "Special Needs Parenting",
+    "Depression",
+    "Marriage",
+  ],
+  [
+    "Anxiety",
+    "Relationships",
+    "Children",
+    "Teens",
+    "Intimacy & Connection",
+    "...And More.",
+  ],
+];
+
+function ExpertiseSection() {
+  return (
+    <section className="expertise-section" id="expertise">
+      <h2 className="expertise-heading">
+        <span>Our areas of</span>
+        <span className="expertise-script">expertise</span>
+      </h2>
+
+      {expertiseColumns.map((column, columnIndex) => (
+        <div
+          className="expertise-column"
+          key={columnIndex}
+          aria-label={`Expertise column ${columnIndex + 1}`}
+        >
+          {column.map((item) => (
+            <div className="expertise-item" key={item}>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      ))}
+    </section>
+  );
+}
+
+
 export default function Home() {
   return (
     <main className="reference-home">
@@ -361,6 +406,7 @@ export default function Home() {
       <IntroductionSection />
       <WhoWeHelpSection />
       <StatementSection />
+      <ExpertiseSection />
     </main>
   );
 }
