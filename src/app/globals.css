@@ -1434,158 +1434,6 @@ a {
 }
 
 
-/* Our Specialities Section  */
-
-.specialties-section {
-  width: 100%;
-  padding: 55px 0 100px;
-  background: #fff;
-  color: #30302f;
-}
-
-.specialties-layout {
-  display: grid;
-  grid-template-columns: 29% minmax(0, 1fr) minmax(0, 1fr);
-  column-gap: 7.5%;
-  align-items: start;
-  width: 82.4%;
-  margin: 0 auto;
-}
-
-.specialties-heading {
-  margin: 0;
-  font-family: var(--font-beaufort-loaded), Georgia, serif;
-  font-size: clamp(34px, 2.4vw, 41px);
-  font-weight: 300;
-  line-height: 1.22;
-  letter-spacing: -0.3px;
-}
-
-.specialties-heading span {
-  display: inline-block;
-  color: var(--accent);
-  font-family: var(--font-script), cursive;
-  font-size: 1.4em;
-  font-weight: 400;
-  line-height: 0.8;
-  letter-spacing: 0;
-  margin-left: 10px;
-  margin-bottom: 20px;
-}
-
-.specialties-grid {
-  grid-column: 2 / 4;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 8%;
-  row-gap: 135px;
-  min-width: 0;
-}
-
-.specialty-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  min-height: 315px;
-}
-
-.specialty-card h3 {
-  margin: 0 0 25px;
-  font-family: var(--font-beaufort-loaded), Georgia, serif;
-  font-size: 30px;
-  font-weight: 300;
-  line-height: 1.3;
-}
-
-.specialty-card p {
-  margin: 0;
-  font-family: var(--font-muli), Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.8;
-}
-
-.specialty-link {
-  display: inline-block;
-  align-self: flex-start;
-  width: max-content;
-  margin-top: auto;
-  padding-bottom: 7px;
-  border-bottom: 1px solid #77746d;
-  font-family: var(--font-muli), Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: opacity 180ms ease;
-}
-
-.specialty-link:hover {
-  opacity: 0.55;
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .specialties-section {
-    padding: 65px 6% 80px;
-  }
-
-  .specialties-layout {
-    grid-template-columns: minmax(0, 1fr);
-    width: 100%;
-    gap: 40px;
-  }
-
-  .specialties-heading {
-    grid-column: 1;
-  }
-
-  .specialties-grid {
-    grid-column: 1;
-    column-gap: 32px;
-    row-gap: 60px;
-  }
-
-  .specialty-card {
-    min-height: 300px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  .specialties-section {
-    padding: 50px 7% 65px;
-  }
-
-  .specialties-layout {
-    gap: 35px;
-  }
-
-  .specialties-heading {
-    font-size: 36px;
-  }
-
-  .specialties-grid {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 42px;
-  }
-
-  .specialty-card {
-    min-height: 260px;
-  }
-
-  .specialty-card h3 {
-    margin-bottom: 16px;
-    font-size: 24px;
-  }
-
-  .specialty-card p {
-    font-size: 14px;
-  }
-}
-
-
 /* Schedule an appointment section  */
 
 .appointment-section {
@@ -3259,4 +3107,269 @@ a {
 .process-caption {
   padding: 38px 22px 17px;
   letter-spacing: 0.015em;
+}
+
+/* Appointment Section */
+
+.cta-section {
+  padding: clamp(56px, 7vw, 88px) clamp(20px, 4vw, 56px);
+  background: #fbf8f5;
+}
+
+.cta-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  max-width: 1320px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #eae3ed;
+  border-radius: 2px 110px 2px 2px;
+}
+
+.cta-banner-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cta-banner-image img {
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.52) sepia(0.09) brightness(1.02) contrast(0.94);
+}
+
+.cta-banner::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgb(234 227 237 / 12%);
+  content: "";
+  pointer-events: none;
+}
+
+.cta-card {
+  position: relative;
+  z-index: 2;
+  width: 47%;
+  max-width: 570px;
+  margin: 52px 0 52px clamp(24px, 5vw, 70px);
+  padding: clamp(34px, 4.6vw, 62px);
+  border-radius: 2px 58px 2px 2px;
+  background: #EAE3ED;
+  color: #3B3144;
+  box-shadow: 0 24px 60px rgb(35 27 40 / 22%);
+}
+
+.cta-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 23px;
+  color: #98584D;
+  font-family: var(--font-muli), Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+}
+
+.cta-eyebrow::before {
+  width: 23px;
+  height: 1px;
+  background: #98584D;
+  content: "";
+}
+
+.cta-card h2 {
+  margin: 0;
+  color: #3B3144;
+  font-family: var(--font-beaufort-pro), Georgia, serif;
+  font-size: clamp(39px, 4.2vw, 56px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.cta-copy {
+  margin: 21px 0 0;
+  color: #655D68;
+  font-family: var(--font-muli), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.cta-card .cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 27px;
+  min-width: 205px;
+  min-height: 51px;
+  margin-top: 27px;
+  padding: 0 18px;
+  border: 1px solid #98584d;
+  background: #98584d;
+  color: #fffaf6;
+  font-family: var(--font-muli), Arial, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 180ms ease;
+}
+
+.cta-card .cta-button:hover {
+  background: #aa6a5b;
+}
+
+.cta-card .cta-button span:last-child {
+  font-size: 17px;
+}
+
+.cta-card .cta-button:focus-visible {
+  outline: 2px solid #3B3144;
+  outline-offset: 4px;
+}
+
+.cta-detail {
+  margin: 21px 0 0;
+  color: #655D68;
+  font-family: var(--font-muli), Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.cta-image-caption {
+  position: absolute;
+  z-index: 3;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 19px 24px 21px;
+  border: 1px solid rgb(59 49 68 / 10%);
+  border-radius: 2px 28px 2px 2px;
+  background: rgb(251 248 245 / 94%);
+  color: #3b3144;
+  box-shadow: 0 8px 28px rgb(59 49 68 / 9%);
+}
+
+.cta-caption-label {
+  color: #98584d;
+  font-family: var(--font-muli), Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.cta-caption-phrase {
+  font-family: var(--font-beaufort-pro), Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 760px) {
+  .cta-section {
+    padding: 54px 22px;
+  }
+
+  .cta-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    overflow: visible;
+    border-radius: 2px 75px 2px 2px;
+  }
+
+  .cta-banner-image {
+    position: relative;
+    inset: auto;
+    flex: none;
+    height: clamp(230px, 52vw, 340px);
+    overflow: hidden;
+    border-radius: 2px 75px 0 0;
+  }
+
+  .cta-banner-image img {
+    object-position: center 45%;
+  }
+
+  .cta-banner::after {
+    display: none;
+  }
+
+  .cta-card {
+    width: auto;
+    max-width: none;
+    margin: -18px 13px 13px;
+    padding: clamp(29px, 6vw, 42px);
+    border-radius: 2px 43px 2px 2px;
+  }
+
+  .cta-card h2 {
+    font-size: clamp(38px, 8vw, 49px);
+  }
+
+  .cta-copy {
+    font-size: 14px;
+  }
+
+  .cta-image-caption {
+    top: auto;
+    right: 10px;
+    bottom: 7px;
+    max-width: 230px;
+    padding: 14px 17px;
+  }
+
+  .cta-caption-phrase {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .cta-image-caption {
+    right: 5px;
+    bottom: 5px;
+    padding: 12px 14px;
+  }
+
+  .cta-caption-label {
+    font-size: 8px;
+  }
+
+  .cta-caption-phrase {
+    font-size: 18px;
+  }
+  
+  .cta-section {
+    padding: 40px 16px;
+  }
+
+  .cta-card {
+    margin-right: 9px;
+    margin-left: 9px;
+    padding: 27px 23px;
+  }
+
+  .cta-card h2 {
+    font-size: 38px;
+  }
+
+  .cta-detail {
+    max-width: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-card .cta-button {
+    transition: none;
+  }
 }

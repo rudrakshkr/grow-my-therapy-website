@@ -569,144 +569,52 @@ function HowWeWorkSection() {
   );
 }
 
-
-function HonoringSection() {
-  return (
-    <section className="honoring-section">
-      <div className="honoring-image">
-        <Image
-          src="/images/honoring-family.jpg"
-          alt="Family of four standing together in the ocean, holding hands and facing the water."
-          fill
-          sizes="(min-width: 768px) 54vw, 100vw"
-          className="honoring-photo"
-        />
-      </div>
-
-      <div className="honoring-copy">
-        <h2>
-          Honoring where you’ve been{" "}
-          <span className="honoring-ampersand">&amp;</span>{" "}
-          helping shape where you’re headed.
-        </h2>
-      </div>
-    </section>
-  );
-}
-
-
-const specialties = [
-  {
-    title: "Trauma",
-    description:
-      "We don’t always know when and how we’ve experienced trauma. In therapy, we’ll work together to help you process your past, understand what’s causing you to stay “stuck,” and regain a sense of safety, control, and hope. You don’t have to carry your burdens alone.",
-    href: "/trauma-counseling-newbury-park",
-  },
-  {
-    title: "EMDR",
-    description:
-      "Eye Movement Desensitization and Reprocessing (EMDR) is a powerful therapeutic technique that helps process and heal trauma by reworking how painful memories are stored in your brain. This allows you to find relief and move toward lasting healing.",
-    href: "/emdr-therapy-newbury-park",
-  },
-  {
-    title: "Dissociation",
-    description:
-      "The feeling of losing time, hearing conflicting voices, or questioning your sense of self can be overwhelming. In therapy, we’ll help you understand these experiences, recognize your own triggers, and create a sense of balance and identity so that you can feel more grounded.",
-    href: "/dissociative-identity-disorder-therapist-newbury-park",
-  },
-  {
-    title: "Special Needs Parenting",
-    description:
-      "Parenting a child with special needs presents unique challenges and complex emotions. We provide compassionate support through lived experience and expertise to help you navigate this journey with tools, understanding, and self-care.",
-    href: "/counseling-special-needs-parents-newbury-park",
-  },
-];
-
-function SpecialtiesSection() {
-  return (
-    <section className="specialties-section" id="specialties">
-      <div className="specialties-layout">
-        <h2 className="specialties-heading">
-          Our <span>specialties</span>
-          <br />
-          include...
-        </h2>
-
-        <div className="specialties-grid">
-          {specialties.map((specialty) => (
-            <article className="specialty-card" key={specialty.title}>
-              <h3>{specialty.title}</h3>
-
-              <p>{specialty.description}</p>
-
-              <a href={specialty.href} className="specialty-link">
-                Learn more
-              </a>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-
 function AppointmentSection() {
   return (
-    <section
-      className="appointment-section"
-      id="schedule-appointment"
-      aria-labelledby="appointment-heading"
-    >
-      <div className="appointment-left-image">
-        <Image
-          src="/images/appointment-shells.jpg"
-          alt="A person picking up seashells on a sandy beach"
-          fill
-          sizes="12vw"
-          className="appointment-photo"
-        />
-      </div>
+    <section className="cta-section" aria-labelledby="cta-title">
+      <div className="cta-banner">
+        <div className="cta-banner-image">
+          <Image
+            src="/images/cta-botanical.jpg"
+            alt="Gentle botanical shadows in warm afternoon sunlight"
+            fill
+            sizes="100vw"
+          />
+        </div>
 
-      <div className="appointment-content">
-        <p className="appointment-eyebrow">
-          Schedule an appointment
-        </p>
+        <div className="cta-card">
+          <p className="cta-eyebrow">A PLACE TO BEGIN</p>
 
-        <h2 id="appointment-heading">
-          Find a therapist who is the right fit for{" "}
-          <span className="appointment-script">you</span>.
-        </h2>
+          <h2 id="cta-title">
+            You deserve space to breathe.
+          </h2>
 
-        <div className="appointment-description">
-          <p>
-            Coming to therapy is a courageous decision, and connecting with
-            the right kind of therapist makes all the difference. We
-            understand that your journey is personal, and we&apos;re here to
-            support you with care and understanding every step of the way.
-            Each member of our team brings dedicated expertise and a
-            commitment to support you in your struggles. We want you to feel
-            prioritized, understood, and empowered.
+          <p className="cta-copy">
+            You don&apos;t have to untangle everything at once.
+            Therapy can help you understand what you&apos;re
+            carrying and find a steadier way forward.
           </p>
 
-          <p>
-            Click the button below to schedule an appointment.
+          <a className="cta-button" href="#contact">
+            <span>Take the first step</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <p className="cta-detail">
+            In-person in Santa Monica
+            <span aria-hidden="true"> · </span>
+            Telehealth across California
           </p>
         </div>
 
-        <a href="/contact" className="appointment-button">
-          Book now
-        </a>
-      </div>
-
-      <div className="appointment-right-image">
-        <Image
-          src="/images/appointment-family.jpg"
-          alt="An adult and child exploring seashells on the beach"
-          fill
-          sizes="35vw"
-          className="appointment-photo appointment-family-photo"
-        />
+        <div className="cta-image-caption">
+          <span className="cta-caption-label">A MOMENT FOR YOU</span>
+          <span className="cta-caption-phrase">
+            Space to pause.
+            <br />
+            Room to grow.
+          </span>
+        </div>
       </div>
     </section>
   );
@@ -825,8 +733,6 @@ export default function Home() {
       <ApproachSection />
       <OfficeSection />
       <HowWeWorkSection />
-      <HonoringSection />
-      <SpecialtiesSection />
       <AppointmentSection />
       <Footer />
     </main>
