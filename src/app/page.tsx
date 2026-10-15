@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
-  { label: "About", href: "#intro-heading" },
+  { label: "About", href: "#about" },
   { label: "Areas of Focus", href: "#services" },
   { label: "Our Approach", href: "#approach" },
   { label: "Our Office", href: "#office" },
@@ -175,60 +175,72 @@ function HeroSection() {
 
 function IntroductionSection() {
   return (
-    <section className="intro-section" aria-labelledby="intro-heading">
-      <div className="intro-content">
-        
-      <h2 id="intro-heading" className="intro-heading">
-        You&apos;re holding onto hope that life can be
-        <br />
-        better than it is right now.
-      </h2>
+    <section
+      className="intro-section"
+      id="about"
+      aria-labelledby="intro-heading"
+    >
+      <div className="intro-inner">
+        <div className="intro-heading-column">
+          <p className="intro-eyebrow">About Dr. Maya Reynolds</p>
 
-        <div className="intro-copy-grid">
-          <div className="intro-left-copy">
-            <p className="intro-emphasis">
-              <strong>
-                  At Conejo Valley Family Counseling we want to make that hope
-                  a reality.
-              </strong>
-            </p>
+          <h2 id="intro-heading" className="intro-heading">
+            You can look like you&apos;re managing—and still feel overwhelmed.
+          </h2>
+        </div>
 
-            <p className="intro-paragraph">
-              Whether you&apos;re an adult seeking personal growth, looking to
-              work through your trauma, a couple working on your relationship,
-              or a parent looking for support for your child, we provide a
-              compassionate and safe space to help you navigate all of
-              life&apos;s ups and downs.
-            </p>
-          </div>
+        <div className="intro-content">
+          <p className="intro-paragraph">
+            I&apos;m Dr. Maya Reynolds, a licensed clinical psychologist
+            based in Santa Monica, California. I work with adults navigating
+            anxiety, stress, panic, and the lingering effects of past
+            experiences.
+          </p>
 
-          <div className="intro-right-copy">
-            <p className="intro-paragraph">
-              First and foremost, we believe what you&apos;re going through is
-              real, valid, and worthy of support. Our team offers clients in
-              the Newbury Park area and across CA an environment to discover
-              a new life and a deeper sense of self in the midst of their
-              struggles. As we tap into the power of connection and
-              understanding, you can find your footing again and take a
-              transformative path forward.
-            </p>
-          </div>
+          <p className="intro-paragraph">
+            Many of the people I work with are thoughtful, self-aware, and
+            used to pushing through. Yet beneath the surface, they may feel
+            exhausted, caught in overthinking, or constantly on edge.
+          </p>
+
+          <p className="intro-paragraph">
+            I believe therapy should offer more than symptom relief. My goal
+            is to help clients develop insight, resilience, and a stronger
+            relationship with themselves over time.
+          </p>
+
+          <a className="intro-link" href="#approach">
+            Explore my approach
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
 
-      <div className="intro-image">
-        <Image
-          src="/images/intro-beach.jpg"
-          alt="Sandy beach with gentle ocean waves and a cloudy sky"
-          fill
-          sizes="(min-width: 1100px) 30.5vw, 100vw"
-          className="intro-photo"
-        />
+      <div className="intro-facts" aria-label="Practice information">
+        <div className="intro-fact">
+          <p className="intro-fact-label">Who I work with</p>
+          <p className="intro-fact-value">
+            Adults, including professionals, entrepreneurs, and creatives.
+          </p>
+        </div>
+
+        <div className="intro-fact">
+          <p className="intro-fact-label">Location</p>
+          <p className="intro-fact-value">
+            Santa Monica, California
+          </p>
+        </div>
+
+        <div className="intro-fact">
+          <p className="intro-fact-label">Session options</p>
+          <p className="intro-fact-value">
+            In-person therapy and secure California telehealth.
+          </p>
+        </div>
       </div>
     </section>
   );
 }
-
 
 const whoWeHelpCards = [
   {
