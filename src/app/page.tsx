@@ -326,77 +326,104 @@ function ServicesSection() {
   );
 }
 
-function StatementSection() {
-  return (
-    <section className="statement-section">
-      <div className="statement-visual">
-        <div className="statement-image">
-          <Image
-            src="/images/story-background.png"
-            alt=""
-            fill
-            sizes="100vw"
-            className="statement-photo"
-          />
-        </div>
 
-        <div className="statement-overlay" />
-
-        <div className="statement-content">
-          <h2>
-            You deserve a place where your story is heard, valued, and
-            understood.{" "}
-            <em>
-              Nothing will be too heavy for us to carry together.
-            </em>
-          </h2>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-
-const expertiseColumns = [
-  [
-    "Dissociation",
-    "Trauma",
-    "Family Conflict",
-    "Special Needs Parenting",
-    "Depression",
-    "Marriage",
-  ],
-  [
-    "Anxiety",
-    "Relationships",
-    "Children",
-    "Teens",
-    "Intimacy & Connection",
-    "...And More.",
-  ],
+const approachMethods = [
+  {
+    label: "THOUGHTS & PATTERNS",
+    title: "Cognitive Behavioral Therapy",
+    description:
+      "Explore unhelpful patterns and practice new ways of responding.",
+  },
+  {
+    label: "TRAUMA-FOCUSED WORK",
+    title: "EMDR",
+    description:
+      "Carefully paced support for processing distressing experiences.",
+  },
+  {
+    label: "PRESENT-MOMENT AWARENESS",
+    title: "Mindfulness",
+    description:
+      "Build awareness of your thoughts, emotions, and present experiences.",
+  },
+  {
+    label: "MIND–BODY CONNECTION",
+    title: "Body-oriented techniques",
+    description:
+      "Notice stress responses and develop a greater sense of safety.",
+  },
 ];
 
-function ExpertiseSection() {
+function ApproachSection() {
   return (
-    <section className="expertise-section" id="expertise">
-      <h2 className="expertise-heading">
-        <span>Our areas of</span>
-        <span className="expertise-script">expertise</span>
-      </h2>
+    <section
+      className="approach-section"
+      id="approach"
+      aria-labelledby="approach-heading"
+    >
+      <div className="approach-inner">
+        <div className="approach-top">
+          <div className="approach-top-copy">
+            <p className="approach-eyebrow">My approach</p>
 
-      {expertiseColumns.map((column, columnIndex) => (
-        <div
-          className="expertise-column"
-          key={columnIndex}
-          aria-label={`Expertise column ${columnIndex + 1}`}
-        >
-          {column.map((item) => (
-            <div className="expertise-item" key={item}>
-              <span>{item}</span>
-            </div>
+            <h2
+              id="approach-heading"
+              className="approach-heading"
+            >
+              Practical tools. Deeper understanding.
+            </h2>
+
+            <p className="approach-description">
+              My approach is warm, collaborative, and grounded.
+              I combine practical tools with space for reflection,
+              helping you better understand what you&apos;re experiencing.
+            </p>
+          </div>
+
+          <figure className="approach-visual">
+            <Image
+              src="/images/approach-space.jpg"
+              alt="A quiet interior corner with a comfortable chair, greenery, and natural light."
+              fill
+              sizes="(min-width: 901px) 44vw, 88vw"
+              className="approach-photo"
+            />
+            <figcaption className="approach-photo-caption">
+              Space to pause, reflect, and reconnect.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div className="approach-methods">
+          {approachMethods.map((method) => (
+            <article
+              className="approach-method"
+              key={method.title}
+            >
+              <p className="approach-method-label">
+                {method.label}
+              </p>
+
+              <h3 className="approach-method-title">
+                {method.title}
+              </h3>
+
+              <p className="approach-method-description">
+                {method.description}
+              </p>
+            </article>
           ))}
         </div>
-      ))}
+
+        <aside className="approach-note">
+          <span aria-hidden="true" className="approach-note-mark">
+            ✳
+          </span>
+          <p>
+            In trauma work, safety and stabilization come first.
+          </p>
+        </aside>
+      </div>
     </section>
   );
 }
@@ -713,8 +740,7 @@ export default function Home() {
       <HeroSection />
       <IntroductionSection />
       <ServicesSection />
-      <StatementSection />
-      <ExpertiseSection />
+      <ApproachSection />
       <HowWeWorkSection />
       <HonoringSection />
       <SpecialtiesSection />
