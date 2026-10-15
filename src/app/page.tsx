@@ -242,58 +242,85 @@ function IntroductionSection() {
   );
 }
 
-const whoWeHelpCards = [
+
+const services = [
   {
-    title: "Adults",
-    image: "/images/who-adults.jpg",
-    alt: "Two people sitting together by the water with mountains in the background",
+    title: "Anxiety & Panic",
     description:
-      "Feeling stuck or overwhelmed? We help adults find clarity, build resilience, and move forward with confidence by addressing the root causes of anxiety, stress, and emotional pain.",
+      "Therapy for constant worry, overthinking, panic, physical tension, and difficulty sleeping. Together, we can explore what you're experiencing and develop more grounded ways to respond.",
+    className: "service-card--anxiety",
   },
   {
-    title: "Couples",
-    image: "/images/who-couples.jpg",
-    alt: "A couple embracing on the beach",
+    title: "Trauma Therapy & EMDR",
     description:
-      "Relationships require effort, and we’re here to help you strengthen yours. We guide couples through challenges like communication breakdowns and trust issues, helping you rebuild intimacy and strengthen your relationship.",
+      "Carefully paced support for the lingering effects of difficult past experiences, with an emphasis on safety, stabilization, and emotional and body-based regulation.",
+    className: "service-card--trauma",
   },
   {
-    title: "Children & Teens",
-    image: "/images/who-children.jpg",
-    alt: "Two children playing together on the beach",
+    title: "Burnout & Perfectionism",
     description:
-      "Kids need support, too. We help them process big emotions, cope with challenging family situations, build coping skills, and feel understood, while also working closely with their parents to create a nurturing environment.",
+      "For professionals, entrepreneurs, and creatives navigating high expectations, persistent pressure, or exhaustion. Create space to reconnect with yourself and explore more sustainable ways of living and working.",
+    className: "service-card--burnout",
   },
 ];
 
-function WhoWeHelpSection() {
+function ServicesSection() {
   return (
-    <section className="who-help-section" id="who-we-help">
-      <h2 className="who-help-heading">
-        Who we <span>help</span>
-      </h2>
+    <section
+      className="services-section"
+      id="services"
+      aria-labelledby="services-heading"
+    >
+      <div className="services-inner">
+        <div className="services-intro">
+          <div className="services-heading-column">
+            <p className="services-eyebrow">Areas of focus</p>
 
-      <div className="who-help-cards">
-        {whoWeHelpCards.map((card) => (
-          <article className="who-help-card" key={card.title}>
-            <div className="who-help-image">
-              <Image
-                src={card.image}
-                alt={card.alt}
-                fill
-                sizes="(min-width: 768px) 25vw, 88vw"
-                className="who-help-photo"
+            <h2
+              id="services-heading"
+              className="services-heading"
+            >
+              Support for what you're carrying.
+            </h2>
+          </div>
+
+          <p className="services-description">
+            Life can look manageable on the outside while anxiety,
+            past experiences, or burnout feel harder to carry internally.
+            Therapy offers space to slow down, understand what you're
+            experiencing, and explore a more sustainable way forward.
+          </p>
+        </div>
+
+        <div className="services-grid">
+          {services.map((service) => (
+            <article
+              className={`service-card ${service.className}`}
+              key={service.title}
+            >
+              <span
+                className="service-card-accent"
+                aria-hidden="true"
               />
-            </div>
 
-            <div className="who-help-card-content">
-              <h3 className="who-help-card-title">{card.title}</h3>
-              <p className="who-help-card-description">
-                {card.description}
+              <h3 className="service-card-title">
+                {service.title}
+              </h3>
+
+              <p className="service-card-description">
+                {service.description}
               </p>
-            </div>
-          </article>
-        ))}
+
+              <a
+                href="#contact"
+                className="service-card-link"
+              >
+                Discuss your needs
+                <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -685,7 +712,7 @@ export default function Home() {
       <SiteHeader />
       <HeroSection />
       <IntroductionSection />
-      <WhoWeHelpSection />
+      <ServicesSection />
       <StatementSection />
       <ExpertiseSection />
       <HowWeWorkSection />
