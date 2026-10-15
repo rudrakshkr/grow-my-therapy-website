@@ -428,6 +428,90 @@ function ApproachSection() {
   );
 }
 
+
+function OfficeSection() {
+  return (
+    <section
+      className="office-section"
+      id="office"
+      aria-labelledby="office-heading"
+    >
+      <div className="office-inner">
+        <div className="office-intro">
+          <div className="office-heading-column">
+            <p className="office-eyebrow">Our office</p>
+
+            <h2 id="office-heading" className="office-heading">
+              A calm space to slow down.
+            </h2>
+          </div>
+
+          <div className="office-copy">
+            <p>
+              My Santa Monica office is a quiet, private space
+              designed to feel calm and grounding. Natural light,
+              comfortable surroundings, and an uncluttered
+              environment offer room to pause and settle in.
+            </p>
+
+            <p>
+              Whether you&apos;re arriving for the first time or
+              returning for a session, this is a space to focus
+              on yourself without the demands of everyday life.
+            </p>
+          </div>
+        </div>
+
+        <div className="office-gallery">
+          <figure className="office-photo office-photo--main">
+            <Image
+              src="/images/office1.jpeg"
+              alt="Interior view of Dr. Maya Reynolds' therapy office."
+              fill
+              sizes="(min-width: 901px) 54vw, 88vw"
+              className="office-image"
+            />
+            <figcaption>A quiet place to pause</figcaption>
+          </figure>
+
+          <figure className="office-photo office-photo--secondary">
+            <Image
+              src="/images/office2.jpeg"
+              alt="Another view of the therapy office interior."
+              fill
+              sizes="(min-width: 901px) 34vw, 88vw"
+              className="office-image"
+            />
+          </figure>
+        </div>
+
+        <div className="office-details">
+          <div className="office-detail">
+            <p className="office-detail-label">Location</p>
+            <p className="office-detail-value">
+              Santa Monica, California
+            </p>
+          </div>
+
+          <div className="office-detail">
+            <p className="office-detail-label">Environment</p>
+            <p className="office-detail-value">
+              Quiet, private, and naturally lit.
+            </p>
+          </div>
+
+          <div className="office-detail">
+            <p className="office-detail-label">Session options</p>
+            <p className="office-detail-value">
+              In-person sessions and secure telehealth across California.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HowWeWorkSection() {
   return (
     <section className="how-work-section" id="how-we-work">
@@ -741,6 +825,7 @@ export default function Home() {
       <IntroductionSection />
       <ServicesSection />
       <ApproachSection />
+      <OfficeSection />
       <HowWeWorkSection />
       <HonoringSection />
       <SpecialtiesSection />
