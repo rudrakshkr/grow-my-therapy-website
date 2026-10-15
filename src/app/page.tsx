@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type NavItem = {
   label: string;
@@ -214,7 +215,7 @@ function IntroductionSection() {
       <div className="intro-content">
         
       <h2 id="intro-heading" className="intro-heading">
-        You're holding onto hope that life can be
+        You&apos;re holding onto hope that life can be
         <br />
         better than it is right now.
       </h2>
@@ -617,7 +618,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-main">
         <div className="footer-brand">
-          <a href="/" className="footer-logo-link" aria-label="Conejo Valley home">
+          <Link href="/" className="footer-logo-link" aria-label="Conejo Valley home">
             <Image
               src="/images/footer-logo.png"
               alt="Conejo Valley Family Counseling"
@@ -625,10 +626,10 @@ function Footer() {
               height={131}
               className="footer-logo"
             />
-          </a>
+          </Link>
 
           <p className="footer-description">
-            We want to make getting started simple. You’re welcome to come
+            We want to make getting started simple. You&apos;re welcome to come
             into our office in Newbury Park or schedule virtual appointments
             from anywhere in CA—whatever works best for you.
           </p>
@@ -637,7 +638,7 @@ function Footer() {
         <nav className="footer-column" aria-label="Footer navigation">
           <h2 className="footer-column-heading">Navigate</h2>
           <ul>
-            <li><a href="/">Home</a></li>
+            <li><Link href="/">Home</Link></li>
             <li><a href="/therapists-newbury-park">About</a></li>
             <li><a href="/faqs">FAQs</a></li>
             <li><a href="/contact">Contact</a></li>
