@@ -34,9 +34,10 @@ const bodyFont = Mulish({
 });
 
 export const metadata: Metadata = {
-  title: "Counseling in Newbury Park, CA | Conejo Valley Family Counseling",
+  title:
+    "Anxiety & Trauma Therapy in Santa Monica, CA | Dr. Maya Reynolds, PsyD",
   description:
-    "Specialized therapy for adults, couples, teens, and children in Newbury Park and across California.",
+    "Explore adult therapy for anxiety, trauma, panic, and burnout with Dr. Maya Reynolds, PsyD, in Santa Monica and via secure telehealth across California.",
 };
 
 export default function RootLayout({

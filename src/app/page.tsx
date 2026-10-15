@@ -1,128 +1,44 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type NavItem = {
-  label: string;
-  children?: { label: string }[];
-};
-
-const navigation: NavItem[] = [
-  { label: "About" },
-  {
-    label: "Our Team",
-    children: [
-      { label: "Jennifer Anderson, LMFT" },
-      { label: "Candace Bletscher, AMFT" },
-      { label: "Heather Williams-Baumgart, AMFT" },
-      { label: "Samantha Johnson, AMFT" },
-      { label: "Autumn Bodily, AMFT" },
-      { label: "Rosa Gomez, AMFT" },
-      { label: "Chad Flores, AMFT" },
-      { label: "Simran Sidhu, AMFT" },
-      { label: "Jessica Jauregui, MA, AMFT" },
-    ],
-  },
-  {
-    label: "Specialties",
-    children: [
-      { label: "Dissociation" },
-      { label: "Trauma" },
-      { label: "Special Needs Parenting" },
-      { label: "Couples" },
-      { label: "Children & Teens" },
-      { label: "Anxiety & Depression" },
-      { label: "Adoption" },
-    ],
-  },
-  {
-    label: "Methods",
-    children: [
-      { label: "EMDR" },
-      { label: "Brainspotting" },
-      { label: "Somatic Therapy" },
-      { label: "Parts Work Therapy" },
-    ],
-  },
-  { label: "FAQs" },
+const navigation = [
+  { label: "About", href: "#intro-heading" },
+  { label: "Areas of Focus", href: "#services" },
+  { label: "Our Approach", href: "#approach" },
+  { label: "Our Office", href: "#office" },
 ];
 
 function SiteHeader() {
   return (
-    <header className="site-header header-announcement-bar-wrapper">
+    <header className="site-header">
       <a href="#hero-heading" className="header-skip-link">
-        Skip to Content
+        Skip to content
       </a>
 
       <div className="site-header-inner">
-        <div className="header-title-nav-wrapper">
-          <div className="header-title-logo">
-            <a href="#!" aria-label="Conejo Valley Family Counseling">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/670423e106da6c036366fd10/7116bf54-a0e1-4128-81d8-24fd9960c7ed/Conejo+Valley+Counseling+Logo.png?format=1500w"
-                alt="Conejo Valley Family Counseling"
-                fetchPriority="high"
-                loading="eager"
-                decoding="async"
-                className="brand-logo-img"
-              />
-            </a>
-          </div>
+        <Link className="brand-lockup" href="/" aria-label="Dr. Maya Reynolds, PsyD home">
+          <span className="brand-name">
+            Dr. Maya Reynolds<span className="brand-credential">, PsyD</span>
+          </span>
+          <span className="brand-tagline">Licensed Clinical Psychologist</span>
+        </Link>
 
-          <nav className="desktop-nav" aria-label="Main navigation">
-            {navigation.map((item) =>
-              item.children ? (
-                <div
-                  key={item.label}
-                  className="header-nav-item header-nav-item--folder"
-                >
-                  <button
-                    type="button"
-                    className="header-nav-folder-title"
-                    aria-expanded="false"
-                  >
-                    <span className="header-nav-folder-title-text">
-                      {item.label}
-                    </span>
-                  </button>
-                  <div className="header-nav-folder-content">
-                    {item.children.map((subItem) => (
-                      <div
-                        key={subItem.label}
-                        className="header-nav-folder-item"
-                      >
-                        <a href="#!">
-                          <span className="header-nav-folder-item-content">
-                            {subItem.label}
-                          </span>
-                        </a>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <div
-                  key={item.label}
-                  className="header-nav-item header-nav-item--collection"
-                >
-                  <a href="#!">{item.label}</a>
-                </div>
-              )
-            )}
-          </nav>
-        </div>
-
-        <div className="header-actions header-actions--right">
-          <div className="header-actions-action header-actions-action--cta">
-            <a className="contact-link" href="#!">
-              Contact
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {navigation.map((item) => (
+            <a key={item.label} href={item.href}>
+              {item.label}
             </a>
-          </div>
-        </div>
+          ))}
+        </nav>
+
+        <a className="contact-link" href="#contact">
+          Schedule a consultation <span aria-hidden="true">↗</span>
+        </a>
 
         <details className="mobile-nav">
-          <summary className="header-burger-btn" aria-label="Open Menu">
-            <span className="burger-box">
+          <summary className="mobile-nav-toggle" aria-label="Toggle navigation">
+            <span className="mobile-nav-label">Menu</span>
+            <span className="burger-box" aria-hidden="true">
               <span className="burger-inner">
                 <span className="top-bun" />
                 <span className="patty" />
@@ -132,23 +48,12 @@ function SiteHeader() {
           </summary>
           <nav aria-label="Mobile navigation">
             {navigation.map((item) => (
-              <div key={item.label} className="mobile-nav-group">
-                <a href="#!" className="mobile-nav-parent">
-                  {item.label}
-                </a>
-                {item.children && (
-                  <div className="mobile-nav-children">
-                    {item.children.map((subItem) => (
-                      <a key={subItem.label} href="#!">
-                        {subItem.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <a key={item.label} href={item.href}>
+                {item.label}
+              </a>
             ))}
-            <a href="#!" className="mobile-nav-cta">
-              Contact
+            <a className="mobile-nav-cta" href="#contact">
+              Schedule a consultation <span aria-hidden="true">↗</span>
             </a>
           </nav>
         </details>
@@ -160,50 +65,109 @@ function SiteHeader() {
 function HeroSection() {
   return (
     <section className="hero" aria-labelledby="hero-heading">
-      <div className="hero-left-image">
-        <Image
-          src="/images/hero-family.jpg"
-          alt="Family spending time together at the beach"
-          fill
-          loading="eager"
-          sizes="(min-width: 1200px) 34vw, 50vw"
-          className="hero-photo"
-        />
-      </div>
+      <div className="hero-inner">
+        <div className="hero-copy">
+          <p className="hero-eyebrow">Therapy for adults in Santa Monica, California</p>
 
-      <div className="hero-copy">
-        <p className="hero-eyebrow">
-          ONLINE &amp; IN-PERSON COUNSELING IN NEWBURY PARK &amp;
-          <br />
-          ACROSS CA
-        </p>
+          <h1 id="hero-heading" className="hero-heading">
+            Therapy for anxiety, trauma <span className="hero-heading-accent">&amp; burnout.</span>
+          </h1>
 
-        <h1 id="hero-heading" className="hero-heading">
-          Rebuild your foundation on{" "}
-          <br className="desktop-break" />
-          solid ground and finally begin{" "}
-          <br className="desktop-break" />
-          to <span className="hero-script">thrive</span>.
-        </h1>
+          <p className="hero-description">
+            I offer warm, collaborative therapy for adults navigating anxiety,
+            stress, difficult past experiences, and the pressure to keep pushing
+            forward.
+          </p>
 
-        <p className="hero-description">
-          Specialized therapy for adults, couples, teens, and children to
-          reflect, heal, and grow.
-        </p>
+          <div className="hero-actions">
+            <a className="hero-cta" href="#contact">
+              Schedule a consultation <span aria-hidden="true">↗</span>
+            </a>
+            <a className="hero-secondary" href="#services">
+              Explore areas of focus <span aria-hidden="true">↓</span>
+            </a>
+          </div>
 
-        <a className="hero-cta" href="#contact">
-          Book an Appointment
-        </a>
-      </div>
+          <section
+            className="hero-details"
+            aria-labelledby="hero-details-heading"
+          >
+            <h2
+              id="hero-details-heading"
+              className="hero-details-heading"
+            >
+              Ways to work together
+            </h2>
 
-      <div className="hero-right-image">
-        <Image
-          src="/images/hero-child.jpg"
-          alt="Parent and child walking along the beach"
-          fill
-          sizes="(min-width: 1200px) 9vw, 50vw"
-          className="hero-photo"
-        />
+            <div className="hero-detail-item">
+              <span className="hero-detail-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+              </span>
+
+              <div className="hero-detail-copy">
+                <p className="hero-detail-title">In-person therapy</p>
+                <p className="hero-detail-description">
+                  Sessions at my Santa Monica office.
+                </p>
+              </div>
+            </div>
+
+            <div className="hero-detail-item">
+              <span className="hero-detail-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="3" y="5" width="12" height="14" rx="2" />
+                  <path d="m15 10 6-4v12l-6-4z" />
+                </svg>
+              </span>
+
+              <div className="hero-detail-copy">
+                <p className="hero-detail-title">Online therapy</p>
+                <p className="hero-detail-description">
+                  Secure telehealth for clients across California.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div className="hero-visual">
+          <div className="hero-portrait-backdrop" aria-hidden="true" />
+          <div className="hero-portrait-frame">
+            <Image
+              src="/images/maya-reynolds.webp"
+              alt="Dr. Maya Reynolds, PsyD, licensed clinical psychologist"
+              fill
+              priority
+              sizes="(min-width: 1100px) 38vw, (min-width: 700px) 44vw, 88vw"
+              className="hero-portrait"
+            />
+          </div>
+          <aside className="hero-note-card" aria-label="Therapeutic approach">
+            <p className="hero-note-label">My approach</p>
+            <p className="hero-note-copy">Warm, collaborative, and grounded.</p>
+          </aside>
+          <p className="hero-visual-caption">
+            Dr. Maya Reynolds, PsyD
+            <span>Licensed Clinical Psychologist</span>
+          </p>
+        </div>
       </div>
     </section>
   );
