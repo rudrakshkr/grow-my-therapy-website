@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ***Conejo Valley Family Counseling — Homepage Recreation***
 
-## Getting Started
+***Part 1 · Grow My Therapy Front-End Developer Internship Assignment***
 
-First, run the development server:
+A front-end recreation of the Conejo Valley Family Counseling homepage. This branch preserves the original-clone version of the assignment; the redesigned Dr. Maya Reynolds website lives separately on `feat/maya-reynolds-redesign`.
+
+> ***Project note:*** This is an educational front-end recreation. It is not the official Conejo Valley Family Counseling website and does not provide clinical services.
+
+### ***Features***
+
+- Responsive homepage structure and navigation
+- Image-led hero and content sections inspired by the original reference website
+- Therapy-practice information and service/specialty sections
+- Appointment-oriented call to action and footer
+- Responsive styling for desktop, tablet, and mobile viewport sizes
+- Page metadata configured through the Next.js App Router
+
+### ***Tech Stack***
+
+- [Next.js](https://nextjs.org/) with the App Router
+- React
+- TypeScript / TSX
+- CSS
+- Next.js Image component and font loading
+
+### ***Getting Started***
+
+***Prerequisites:*** Install Node.js compatible with this project's Next.js version and npm.
+
+***Install dependencies:***
+
+```bash
+npm install
+```
+
+***Run the development server:***
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ***Available Scripts***
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Starts the local development server |
+| `npm run lint` | Runs ESLint |
+| `npm run build` | Creates a production build |
+| `npm run start` | Serves the production build locally |
 
-## Learn More
+### ***Project Structure***
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+└── app/
+    ├── globals.css   # Global and responsive page styles
+    ├── layout.tsx    # Root layout, fonts, and page metadata
+    └── page.tsx      # Homepage components and content
+public/
+└── images/           # Image assets used by this branch
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ***Branch Strategy***
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `main` — Part 1, original homepage recreation
+- `feat/maya-reynolds-redesign` — Part 2, redesigned fictional therapist website
 
-## Deploy on Vercel
+Keep these branches separate to make each assignment stage independently accessible.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ***Assignment Context***
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This repository version documents **Part 1: the homepage clone**. It is distinct from the fictional Dr. Maya Reynolds redesign developed for Part 2.
