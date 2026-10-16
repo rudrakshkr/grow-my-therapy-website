@@ -27,7 +27,7 @@ const bodyFont = Mulish({
 
 export const metadata: Metadata = {
   title:
-    "Anxiety & Trauma Therapy in Santa Monica, CA | Dr. Maya Reynolds, PsyD",
+    "Dr. Maya Reynolds, PsyD | Anxiety & Trauma Therapy",
   description:
     "Explore adult therapy for anxiety, trauma, panic, and burnout with Dr. Maya Reynolds, PsyD, in Santa Monica and via secure telehealth across California.",
 };
