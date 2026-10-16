@@ -12,14 +12,6 @@ const headingFallback = Cormorant_Garamond({
   weight: ["300", "400"],
 });
 
-const scriptFont = localFont({
-  src: "../../public/fonts/Amsterdam_Handwriting.ttf",
-  variable: "--font-script",
-  display: "swap",
-  weight: "400",
-  style: "normal",
-});
-
 const beaufortFont = localFont({
   src: "../../public/fonts/Beaufort-Pro-Light.otf",
   variable: "--font-beaufort-loaded",
@@ -46,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${headingFallback.variable} ${scriptFont.variable} ${bodyFont.variable} ${beaufortFont.variable} antialiased`}
+      className={`${headingFallback.variable} ${bodyFont.variable} ${beaufortFont.variable} antialiased`}
     >
       <body>{children}</body>
     </html>

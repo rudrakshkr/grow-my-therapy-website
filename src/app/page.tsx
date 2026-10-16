@@ -11,10 +11,6 @@ const navigation = [
 function SiteHeader() {
   return (
     <header className="site-header">
-      <a href="#hero-heading" className="header-skip-link">
-        Skip to content
-      </a>
-
       <div className="site-header-inner">
         <Link className="brand-lockup" href="/" aria-label="Dr. Maya Reynolds, PsyD home">
           <span className="brand-name">
@@ -75,8 +71,9 @@ function HeroSection() {
 
           <p className="hero-description">
             I offer warm, collaborative therapy for adults navigating anxiety,
-            stress, difficult past experiences, and the pressure to keep pushing
-            forward.
+            stress, trauma, and burnout—especially when you&apos;ve spent years
+            pushing through while feeling exhausted, caught in overthinking,
+            or emotionally on edge.
           </p>
 
           <div className="hero-actions">
@@ -198,15 +195,16 @@ function IntroductionSection() {
           </p>
 
           <p className="intro-paragraph">
-            Many of the people I work with are thoughtful, self-aware, and
-            used to pushing through. Yet beneath the surface, they may feel
-            exhausted, caught in overthinking, or constantly on edge.
+            Many of the people I work with are high-achieving, thoughtful, and
+            self-aware, and used to pushing through. Yet beneath the surface,
+            they may feel exhausted, caught in overthinking, or constantly on edge.
           </p>
 
           <p className="intro-paragraph">
-            I believe therapy should offer more than symptom relief. My goal
-            is to help clients develop insight, resilience, and a stronger
-            relationship with themselves over time.
+            I believe therapy works best when clients feel respected,
+            understood, and actively involved. My goal goes beyond symptom
+            relief: to support insight, resilience, and a stronger relationship
+            with yourself over time.
           </p>
 
           <a className="intro-link" href="#approach">
@@ -227,7 +225,7 @@ function IntroductionSection() {
         <div className="intro-fact">
           <p className="intro-fact-label">Location</p>
           <p className="intro-fact-value">
-            Santa Monica, California
+            123th Street 45 W, Santa Monica, CA 90401
           </p>
         </div>
 
@@ -247,19 +245,19 @@ const services = [
   {
     title: "Anxiety & Panic",
     description:
-      "Therapy for constant worry, overthinking, panic, physical tension, and difficulty sleeping. Together, we can explore what you're experiencing and develop more grounded ways to respond.",
+      "Support for constant worry, overthinking, panic, physical tension, difficulty sleeping, or feeling as though something may go wrong. Together, we can explore what you are experiencing and develop more grounded ways to respond.",
     className: "service-card--anxiety",
   },
   {
     title: "Trauma Therapy & EMDR",
     description:
-      "Carefully paced support for the lingering effects of difficult past experiences, with an emphasis on safety, stabilization, and emotional and body-based regulation.",
+      "Support for single-incident trauma and complex patterns linked to childhood, relationships, or chronic stress—especially when they affect connection, confidence, or a sense of safety. Work is carefully paced around stabilization and emotional and body-based regulation.",
     className: "service-card--trauma",
   },
   {
     title: "Burnout & Perfectionism",
     description:
-      "For professionals, entrepreneurs, and creatives navigating high expectations, persistent pressure, or exhaustion. Create space to reconnect with yourself and explore more sustainable ways of living and working.",
+      "For professionals, entrepreneurs, and creatives navigating perfectionism, high internal pressure, or exhaustion after years of pushing through. Create space to reconnect with yourself and explore more sustainable ways of living and working.",
     className: "service-card--burnout",
   },
 ];
@@ -280,15 +278,16 @@ function ServicesSection() {
               id="services-heading"
               className="services-heading"
             >
-              Support for what you're carrying.
+              Support for what you&apos;re carrying.
             </h2>
           </div>
 
           <p className="services-description">
             Life can look manageable on the outside while anxiety,
-            past experiences, or burnout feel harder to carry internally.
-            Therapy offers space to slow down, understand what you're
-            experiencing, and explore a more sustainable way forward.
+            past experiences, or burnout feel much harder to carry internally.
+            Therapy offers space to slow down, understand what you are
+            experiencing emotionally and physically, and explore a more
+            sustainable way forward.
           </p>
         </div>
 
@@ -332,25 +331,25 @@ const approachMethods = [
     label: "THOUGHTS & PATTERNS",
     title: "Cognitive Behavioral Therapy",
     description:
-      "Explore unhelpful patterns and practice new ways of responding.",
+      "Notice unhelpful thought and behavior patterns and practice new ways of responding to difficult situations.",
   },
   {
     label: "TRAUMA-FOCUSED WORK",
     title: "EMDR",
     description:
-      "Carefully paced support for processing distressing experiences.",
+      "A trauma-focused method that can support processing distressing experiences, with careful attention to pacing and stabilization.",
   },
   {
     label: "PRESENT-MOMENT AWARENESS",
     title: "Mindfulness",
     description:
-      "Build awareness of your thoughts, emotions, and present experiences.",
+      "Practice noticing thoughts, emotions, and present-moment experiences with greater awareness.",
   },
   {
     label: "MIND–BODY CONNECTION",
     title: "Body-oriented techniques",
     description:
-      "Notice stress responses and develop a greater sense of safety.",
+      "Pay attention to how stress shows up in the body and build skills that support regulation and a greater sense of safety.",
   },
 ];
 
@@ -375,8 +374,9 @@ function ApproachSection() {
 
             <p className="approach-description">
               My approach is warm, collaborative, and grounded.
-              I combine practical tools with space for reflection,
-              helping you better understand what you&apos;re experiencing.
+              I integrate evidence-based methods with practical tools and room for
+              reflection and depth, helping you understand both the emotional
+              and physiological sides of what you are experiencing.
             </p>
           </div>
 
@@ -420,7 +420,9 @@ function ApproachSection() {
             ✳
           </span>
           <p>
-            In trauma work, safety and stabilization come first.
+            Trauma work is paced carefully, with an emphasis on safety,
+            stabilization, and helping you feel more regulated in daily life—not
+            just during sessions.
           </p>
         </aside>
       </div>
@@ -439,7 +441,7 @@ function OfficeSection() {
       <div className="office-inner">
         <div className="office-intro">
           <div className="office-heading-column">
-            <p className="office-eyebrow">Our office</p>
+            <p className="office-eyebrow">The office</p>
 
             <h2 id="office-heading" className="office-heading">
               A calm space to slow down.
@@ -448,16 +450,16 @@ function OfficeSection() {
 
           <div className="office-copy">
             <p>
-              My Santa Monica office is a quiet, private space
-              designed to feel calm and grounding. Natural light,
-              comfortable surroundings, and an uncluttered
-              environment offer room to pause and settle in.
+              My Santa Monica office is a quiet, private space designed to feel
+              calm and grounding. Natural light, comfortable surroundings, and an
+              uncluttered environment are intended to help you feel more at ease
+              when you arrive.
             </p>
 
             <p>
-              Whether you&apos;re arriving for the first time or
-              returning for a session, this is a space to focus
-              on yourself without the demands of everyday life.
+              Sessions offer space to slow down and focus on yourself, away from
+              the demands of everyday life, in an environment designed to feel
+              comfortable and private.
             </p>
           </div>
         </div>
@@ -489,7 +491,7 @@ function OfficeSection() {
           <div className="office-detail">
             <p className="office-detail-label">Location</p>
             <p className="office-detail-value">
-              Santa Monica, California
+              123th Street 45 W, Santa Monica, CA 90401
             </p>
           </div>
 
@@ -543,14 +545,16 @@ function HowWeWorkSection() {
           </h2>
 
           <p className="process-description">
-            Therapy with me is warm, collaborative, and grounded.
-            Sessions offer practical tools while leaving room for
-            reflection and deeper understanding.
+            Sessions are structured enough to feel supportive while still
+            leaving room for reflection and depth. We work collaboratively to
+            understand what you are experiencing and make space for both
+            practical tools and deeper understanding.
           </p>
 
           <p className="process-description">
-            We work together to understand your needs and move at
-            a pace that feels supportive.
+            When trauma is part of the picture, we move carefully. Alongside
+            processing difficult experiences, we focus on safety, stabilization,
+            and skills that can help you feel more regulated in everyday life.
           </p>
 
           <div className="process-principles">
@@ -590,9 +594,10 @@ function AppointmentSection() {
           </h2>
 
           <p className="cta-copy">
-            You don&apos;t have to untangle everything at once.
-            Therapy can help you understand what you&apos;re
-            carrying and find a steadier way forward.
+            You don&apos;t have to sort through constant worry, difficult past
+            experiences, or the pressure to keep going on your own. Therapy can
+            offer space to slow down, understand what you are carrying, and
+            explore more sustainable ways of living and working.
           </p>
 
           <a className="cta-button" href="#contact">
@@ -634,8 +639,8 @@ function Footer() {
           </h2>
 
           <p className="site-footer-description">
-            Thoughtful, collaborative therapy for adults navigating
-            anxiety, trauma, burnout, and the pressure to keep going.
+            Warm, collaborative therapy for adults navigating anxiety, panic,
+            trauma, burnout, perfectionism, and the pressure to keep going.
           </p>
         </div>
 
@@ -657,7 +662,7 @@ function Footer() {
         <div className="site-footer-column site-footer-care">
           <h3>Care &amp; location</h3>
           <p>In-person sessions</p>
-          <p>Santa Monica, California</p>
+          <p>123th Street 45 W, Santa Monica, CA 90401</p>
           <span className="site-footer-divider" />
           <p>Secure telehealth</p>
           <p>Across California</p>
